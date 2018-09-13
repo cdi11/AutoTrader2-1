@@ -34,6 +34,8 @@ class SortOptionsViewController: UIViewController, UITableViewDataSource, UITabl
 struct Selection {
     let option: Option
     var isChecked: Bool
+    
+    
 }
 
 enum Option: Int {
@@ -52,10 +54,19 @@ enum Option: Int {
             return "A to Z For Model of Vehicle"
         case .oldestToNewest:
             return "Oldest to Newest"
+          
+            
+           
+            
         }
+       
+        
     }
+    
 }
+
 
 class SortOptionTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
+    
 }

@@ -135,6 +135,6 @@ struct Vehicle: Codable {
 
 struct VehiclesGenerator {
     var vehicles: [Vehicle] {
-        return (0...1000).map { _ in Vehicle(make: (Make.selectRandom() as! Make).stringValue, model: "Civic", year: (Year.selectRandom() as! Year).integerValue, id: UUID(), price: Double(arc4random_uniform(UInt32(60_000 - 1_000)) + UInt32(1_000)), type: (VehicleType.selectRandom() as! VehicleType).stringValue)  }
+        return (0...100).map { _ in Vehicle(make: (Make.selectRandom() as! Make).stringValue, model: "Civic", year: (Year.selectRandom() as! Year).integerValue, id: UUID(), price: Double(arc4random_uniform(UInt32(60_000 - 1_000)) + UInt32(1_000)), type: (VehicleType.selectRandom() as! VehicleType).stringValue)  }
     }
 }

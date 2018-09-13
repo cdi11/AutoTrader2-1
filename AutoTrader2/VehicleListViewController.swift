@@ -18,8 +18,49 @@ class CarsModel {
     func newSelection(at index: Int) {
         selections[index].isChecked = !selections[index].isChecked
         // sort the vehicles array!
+           // print(selections)
+        
+        
+        for selection in selections {
+            if selection.isChecked == true {
+                if selection.option == .lowestToHighestInPrice {
+                    print ("sorted by price")
+                    vehicles = vehicles.sorted(by: {$0.price > $1.price})
+                }
+            
+        
+       
+            if selection.isChecked == true {
+                if selection.option == .aToZForMake {
+                    print ("sorted by make")
+                    vehicles = vehicles.sorted(by: {$0.make < $1.make})
+                }
+            
+        
+            if selection.isChecked == true {
+                if selection.option == .aToZForModel {
+                    print ("sorted by model")
+                    vehicles = vehicles.sorted(by: {$0.model < $1.model})
+                }
+            
+        
+            if selection.isChecked == true {
+                if selection.option == .oldestToNewest {
+                    print ("sorted by year")
+                    vehicles = vehicles.sorted(by: {$0.year < $1.year})
+                }
+            }
+            }
+            }
+            }
+        }
+        
+    
     }
+    
 }
+            
+
 
 class CarsCell: UITableViewCell {
     @IBOutlet weak var makeLabel: UILabel!
@@ -93,7 +134,12 @@ extension VehicleListViewController: UITableViewDataSource {
         vehicleCell.modelLabel.text = "Model: " + vehicle.model
         vehicleCell.yearLabel.text = "Year \(vehicle.year)"
         
+        
         return vehicleCell
     }
+    
+    
+    
+
 }
 
